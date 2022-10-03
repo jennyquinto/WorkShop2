@@ -34,14 +34,22 @@ body {
   list-style: none;
   gap: 36px;
 }
+.header__list__menu {
+  cursor: pointer;
+}
 .header__list img {
   margin-left: 5.4px;
 }
 .header__list__menu {
   position: relative;
-  z-index: -10;
+  cursor: pointer;
+}
+.header__list__menu:hover .menu, .header__list__menu:hover .menu2 {
+  visibility: visible;
 }
 .header__list__menu .menu {
+  visibility: hidden;
+  cursor: pointer;
   position: absolute;
   z-index: 100;
   top: 30px;
@@ -49,7 +57,7 @@ body {
   height: 80px;
   list-style: none;
   border-radius: 12px;
-  background-color: aqua;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,6 +65,7 @@ body {
   box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
 }
 .header__list__menu .menu2 {
+  visibility: hidden;
   position: absolute;
   z-index: 100;
   top: 30px;
@@ -65,7 +74,7 @@ body {
   height: 100px;
   list-style: none;
   border-radius: 12px;
-  background-color: aqua;
+  background-color: whitesmoke;
   display: flex;
   flex-direction: column;
   align-items: center;
