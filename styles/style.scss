@@ -1,0 +1,63 @@
+//importar las font-sizes
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
+
+//Variables SASS
+$font-body: 'Epilogue';
+$font-size-body: 18px;
+$color-almost-white: hsl(0, 0%, 98%);
+$color-medium-grey: hsl(0, 0%, 41%);
+$color-almost-black: hsl(0, 0%, 8%);
+
+//Declaración de funciones
+@function size($t) {
+    @return $t*$font-size-body;
+}
+
+//importar partials o modules
+@import 'universals';
+
+//mixins: mezclas de propiedades reusables
+@mixin paddings ($t) {
+    padding: $t*1px $t*4px;
+}
+
+//Propiedades body
+body {
+    font-family: $font-body;
+    font-size: $font-size-body;
+    color: $color-almost-white;
+}
+
+
+//Propiedades header
+.header{
+    display: flex; 
+    align-items: center; 
+    height: size(3);
+    @include paddings(10);
+    &__nav{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: $color-medium-grey;
+        font-size: size(0.8);
+    }
+    &__left{
+        display: flex;
+        align-items: center; 
+        gap: size(3);
+    }
+    &__list{
+        display: flex;
+        list-style: none;
+        gap: size(2);
+        img{
+            margin-left: size(0.3);
+        }
+    }
+    &__right{
+        display: flex;
+        align-items: center;
+        gap: size(3);
+    }
+}
