@@ -37,6 +37,44 @@ body {
 .header__list img {
   margin-left: 5.4px;
 }
+.header__list__menu {
+  position: relative;
+  z-index: -10;
+}
+.header__list__menu .menu {
+  position: absolute;
+  z-index: 100;
+  top: 30px;
+  width: 100px;
+  height: 80px;
+  list-style: none;
+  border-radius: 12px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
+}
+.header__list__menu .menu2 {
+  position: absolute;
+  z-index: 100;
+  top: 30px;
+  left: -48px;
+  width: 130px;
+  height: 100px;
+  list-style: none;
+  border-radius: 12px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
+}
+.header__list__menu .menu2 img {
+  margin-right: 10.8px;
+}
 .header__right {
   display: flex;
   align-items: center;
