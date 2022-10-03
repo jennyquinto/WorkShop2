@@ -16,7 +16,7 @@ $color-almost-black: hsl(0, 0%, 8%);
 //importar partials o modules
 @import 'universals';
 
-//mixins: mezclas de propiedades reusables
+//mixins: mezclas de propiedades modulares
 @mixin paddings ($t) {
     padding: $t*1px $t*4px;
 }
@@ -60,4 +60,70 @@ body {
         align-items: center;
         gap: size(3);
     }
+}
+
+//main
+.hero{
+    display: flex;    
+    @include paddings(10);     
+    height: 80vh;
+    &__left{
+        // height: size(28); 
+        padding-left: 50px;
+        height: 100%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h1{
+            margin-top: 80px;
+            color: $color-almost-black;
+            font-size: 4.8em;
+            font-weight: 700;
+        }
+        p{
+            width: 90%;
+            font-size: size(1.1);            
+            color: $color-medium-grey;
+            line-height: 28px;
+        }
+        &__bottom{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 20%;
+                height: 80%;
+                object-fit: contain;
+            }
+        }
+        button {
+            width: 120px;
+            height: 40px;
+            border: none;
+            background-color: $color-almost-black;
+            border-radius: 12px;
+            color: $color-almost-white;
+            font-weight: 700;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-almost-white;
+                color: $color-almost-black;
+                border: 1px solid $color-almost-black;
+            }
+        }
+    }
+    &__right{
+        display: flex;
+        width: 60%;
+        height: size(28); ;
+        justify-content: end;
+        img{
+            width: 450px;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
 }
