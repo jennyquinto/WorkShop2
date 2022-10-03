@@ -30,34 +30,101 @@ body {
 
 
 //Propiedades header
-.header{
-    display: flex; 
-    align-items: center; 
+.header {
+    display: flex;
+    align-items: center;
     height: size(3);
     @include paddings(10);
-    &__nav{
+
+    &__nav {
         width: 100%;
         display: flex;
         justify-content: space-between;
         color: $color-medium-grey;
         font-size: size(0.8);
     }
-    &__left{
-        display: flex;
-        align-items: center; 
-        gap: size(3);
-    }
-    &__list{
-        display: flex;
-        list-style: none;
-        gap: size(2);
-        img{
-            margin-left: size(0.3);
-        }
-    }
-    &__right{
+
+    &__left {
         display: flex;
         align-items: center;
         gap: size(3);
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: size(2);
+
+        img {
+            margin-left: size(0.3);
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: size(3);
+    }
+
+    &__hamburger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        flex-direction: column;
+
+        &__hamburger {
+            display: block;
+            cursor: pointer;
+        }
+        &__hamburger.active .line:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        &__hamburger.active .line:nth-child(2) {
+            opacity: 0;
+        }
+        &__hamburger.active .line:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        
+        &__list {
+            gap: size(1);
+            position: fixed;
+            width: 70vw;
+            height: 100vh;
+            top: 60px;
+            flex-direction: column;
+            background-color: $color-almost-white;
+            text-align: center;
+            transition: 0.3s;
+            right: -100%;
+        }
+        &__right {
+            gap: size(1);
+            position: fixed;
+            width: 70vw;
+            height: 100vh;
+            top: 200px;
+            flex-direction: column;
+            background-color: $color-almost-white;
+            text-align: center;
+            transition: 0.3s;
+            right: -100%;
+        }
+        &__list.active {
+            right:0;
+        }
+        &__right.active {
+            right:0;
+        }
+    }
+    .line {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: black;
     }
 }
