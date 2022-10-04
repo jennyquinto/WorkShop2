@@ -54,14 +54,25 @@ body {
         display: flex;
         list-style: none;
         gap: size(2);
-
-        img {
+        &__menu{
+            cursor: pointer;
+        }
+        
+        img{
             margin-left: size(0.3);
         }
         &__menu{
             position: relative;
-            z-index: -10;
+            // z-index: -10;
+            cursor: pointer;
+            &:hover{
+                .menu, .menu2{
+                    visibility: visible;
+                }
+            }            
             .menu{
+                visibility: hidden;
+                cursor: pointer; 
                 position: absolute;
                 z-index: 100;
                 top: 30px;
@@ -69,14 +80,16 @@ body {
                 height: 80px;             
                 list-style: none;
                 border-radius: 12px;
-                background-color: aqua;
+                background-color: whitesmoke;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-around;
                 box-shadow: 0px 17px 23px 14px rgba(0,0,0,0.1);
+                
             }
             .menu2{
+                visibility: hidden;
                 position: absolute;
                 z-index: 100;
                 top: 30px;
@@ -85,7 +98,7 @@ body {
                 height: 100px;             
                 list-style: none;
                 border-radius: 12px;
-                background-color: aqua;
+                background-color: whitesmoke;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -139,7 +152,6 @@ body {
     @include paddings(10);     
     height: 80vh;
     &__left{
-        // height: size(28); 
         padding-left: 50px;
         height: 100%;
         width: 50%;
