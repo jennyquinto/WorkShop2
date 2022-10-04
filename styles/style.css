@@ -23,6 +23,7 @@ body {
   justify-content: space-between;
   color: hsl(0deg, 0%, 41%);
   font-size: 14.4px;
+  cursor: pointer;
 }
 .header__left {
   display: flex;
@@ -34,8 +35,20 @@ body {
   list-style: none;
   gap: 36px;
 }
+.header__list:hover {
+  color: hsl(0deg, 0%, 8%);
+}
 .header__list__menu {
   cursor: pointer;
+}
+.header__list__menu:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+.header__list__menu:hover .arrow {
+  transform: rotate(180deg);
+}
+.header__list__menu:hover .menu, .header__list__menu:hover .menu2 {
+  visibility: visible;
 }
 .header__list img {
   margin-left: 5.4px;
@@ -43,9 +56,6 @@ body {
 .header__list__menu {
   position: relative;
   cursor: pointer;
-}
-.header__list__menu:hover .menu, .header__list__menu:hover .menu2 {
-  visibility: visible;
 }
 .header__list__menu .menu {
   visibility: hidden;
@@ -67,27 +77,50 @@ body {
 .header__list__menu .menu2 {
   visibility: hidden;
   position: absolute;
+  padding: 20px;
   z-index: 100;
   top: 30px;
   left: -48px;
   width: 130px;
-  height: 100px;
+  height: 70px;
   list-style: none;
   border-radius: 12px;
   background-color: whitesmoke;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  align-content: space-between;
+  justify-content: space-between;
   box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
 }
 .header__list__menu .menu2 img {
   margin-right: 10.8px;
 }
+.header__list__menu .menu2 li {
+  display: flex;
+  justify-content: flex-start;
+}
 .header__right {
   display: flex;
   align-items: center;
   gap: 54px;
+}
+.header__right:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+.header__right button {
+  width: 100px;
+  height: 40px;
+  background-color: inherit;
+  color: hsl(0deg, 0%, 41%);
+  border: 1px solid hsl(0deg, 0%, 41%);
+  font-weight: bold;
+  border-radius: 12px;
+  font-size: 14.4px;
+  cursor: pointer;
+}
+.header__right button:hover {
+  border: 1px solid hsl(0deg, 0%, 8%);
+  color: hsl(0deg, 0%, 8%);
 }
 
 .hero {
