@@ -42,6 +42,7 @@ body {
         justify-content: space-between;
         color: $color-medium-grey;
         font-size: size(0.8);
+        cursor: pointer;
     }
 
     &__left {
@@ -142,44 +143,149 @@ body {
 
     &__hamburger {
         display: none;
+
+    &__list {
+        display: flex;
+        list-style: none;
+        gap: size(2);
+        &:hover{
+            color: $color-almost-black;
+        }
+
+        &__menu {
+            cursor: pointer;
+            &:hover {
+                .arrow {
+                    transform: rotate(180deg);
+                }
+                .menu,.menu2 {
+                    visibility: visible;
+                }
+                color: $color-almost-black;
+            }
+        }
+
+        img {
+            margin-left: size(0.3);
+        }
+
+        &__menu {
+            position: relative;
+            cursor: pointer;
+            .menu {
+                visibility: hidden;
+                cursor: pointer;
+                position: absolute;
+                z-index: 100;
+                top: 30px;
+                width: 100px;
+                height: 80px;
+                list-style: none;
+                border-radius: 12px;
+                background-color: whitesmoke;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu2 {
+                visibility: hidden;
+                position: absolute;
+                padding: 20px;
+                z-index: 100;
+                top: 30px;
+                left: -48px;
+                width: 130px;
+                height: 70px;
+                list-style: none;
+                border-radius: 12px;
+                background-color: whitesmoke;
+                display: flex;
+                flex-direction: column;
+                align-content: space-between;
+                justify-content: space-between;
+                box-shadow: 0px 17px 23px 14px rgba(0, 0, 0, 0.1);
+                img {
+                    margin-right: size(0.6);
+                }
+                li {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: size(3);
+        &:hover{
+            color: $color-almost-black;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: inherit;
+            color: $color-medium-grey;
+            // font-weight: 700;
+            border: 1px solid $color-medium-grey;
+            font-weight: bold;
+            border-radius: 12px;
+            font-size: size(0.8);
+            cursor: pointer;
+
+            &:hover{
+                border: 1px solid $color-almost-black;
+                color: $color-almost-black;
+            }
+        }
     }
 }
 
 
 //main
-.hero{
-    display: flex;    
-    @include paddings(10);     
+.hero {
+    display: flex;
+    @include paddings(10);
     height: 80vh;
-    &__left{
+
+    &__left {
         padding-left: 50px;
         height: 100%;
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        h1{
+
+        h1 {
             margin-top: 80px;
             color: $color-almost-black;
             font-size: 4.8em;
             font-weight: 700;
         }
-        p{
+
+        p {
             width: 90%;
-            font-size: size(1.1);            
+            font-size: size(1.1);
             color: $color-medium-grey;
             line-height: 28px;
         }
-        &__bottom{
+
+        &__bottom {
             width: 100%;
             display: flex;
             justify-content: space-between;
-            img{
+
+            img {
                 width: 20%;
                 height: 80%;
                 object-fit: contain;
             }
         }
+
         button {
             width: 120px;
             height: 40px;
@@ -189,6 +295,7 @@ body {
             color: $color-almost-white;
             font-weight: 700;
             cursor: pointer;
+
             &:hover {
                 background-color: $color-almost-white;
                 color: $color-almost-black;
@@ -196,12 +303,15 @@ body {
             }
         }
     }
-    &__right{
+
+    &__right {
         display: flex;
         width: 60%;
-        height: size(28); ;
+        height: size(28);
+        ;
         justify-content: end;
-        img{
+
+        img {
             width: 450px;
             height: 100%;
             object-fit: contain;
@@ -271,4 +381,5 @@ body {
         }
     }
     
+}
 }
